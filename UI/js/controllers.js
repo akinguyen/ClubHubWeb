@@ -24,6 +24,17 @@ angular
         console.log(response.data);
       });
   })
+  .controller("myEvenController", function($http, $scope) {
+    $http
+      .get("http://clubhubhackuci.herokuapp.com/users")
+      .then(function(response) {
+        console.log(response.data);
+        var self = $scope;
+        self.users = response.data;
+
+        console.log(response.data);
+      });
+  })
   .controller("clubEventController", function($http, $scope) {
     var url_string = window.location.href;
     var url = new URL(url_string);
@@ -98,7 +109,7 @@ angular
       $http
         .post(
           `http://clubhubhackuci.herokuapp.com/clubs/${clubId}/events/${eventId}/register`,
-          { userId: "5c684ceaea2d84376c5db9a7" }
+          { userId: "5c684ceaea2d84376c5db9a7", email: $scope.emailRegister }
         )
         .then(function(response) {
           //var self = $scope;
