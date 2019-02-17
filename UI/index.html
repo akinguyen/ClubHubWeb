@@ -63,29 +63,24 @@
       </div>
     </div>
   </nav>
-  <body ng-app="myApp">
+  <body class="text-center" ng-app="myApp">
     <section ng-controller="clubsController">
-      <div class="input-group p-2">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Search"
-          ng-model="query"
-        />
-      </div>
-      <div class="container">
-        <div
-          class="card text-white bg-info mt-2"
-          ng-repeat="club in clubs | filter: query"
-        >
-          <div class="card-header">{{ club.category || "General" }}</div>
-          <div class="card-body">
-            <h5 class="card-title">{{ club.clubName }}</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
+      <div
+        class="bg"
+        style="background: url('https://i.imgur.com/S5md8b9.jpg');  background-position: center; 
+        height: 150%
+      "
+      ></div>
+      <div class="blur"></div>
+      <div
+        class="container"
+        style="position: relative; z-index: 3; color: white; margin-left: auto;
+        margin-right: auto;
+        width: 50%;"
+      >
+        <div style="position: absolute; margin-top: 400px; font-size: 100px">
+          <div><h1>Welcome to ClubHub</h1></div>
+          <h2>Where students become part of every community</h2>
         </div>
       </div>
 

@@ -78,6 +78,22 @@ div.desc {
   width: 100%;
   z-index: -1;
 }
+.blur {
+  /* The image used */
+  background-color: black;
+  opacity: 0.6;
+
+  /* Full height */
+  height: 150%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
 .dropdown-item {
   cursor: pointer;
 }
