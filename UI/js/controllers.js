@@ -80,6 +80,20 @@ angular
       $scope.modalEvent = event;
     };
 
+    $scope.myFilter = function(item) {
+      return !$scope.freeFood || item.freeFood;
+    };
+
+    $scope.applyFilter = function() {
+      $scope.freeFood = true;
+      console.log($scope.events[0]);
+    };
+
+    $scope.removeFilter = function() {
+      $scope.freeFood = false;
+      console.log("2");
+    };
+
     $scope.registerEvent = function(clubId, eventId) {
       $http
         .post(

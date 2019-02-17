@@ -75,25 +75,23 @@
           type="button"
           id="dropdownMenuButton"
           data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
         >
           Filter
         </button>
 
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item all">All</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item all" ng-click="removeFilter()">All</a>
 
-          <a class="dropdown-item food">Free Food</a>
-          <a class="dropdown-item stem">STEM</a>
-          <a class="dropdown-item art">Art</a>
+          <a class="dropdown-item food" ng-click="applyFilter()">Free Food</a>
+          <a class="dropdown-item stem" ng-click="removeFilter()">STEM</a>
+          <a class="dropdown-item art" ng-click="removeFilter()">Art</a>
         </div>
       </div>
 
       <div class="card-columns st-3 mt-4">
         <div
           class="card"
-          ng-repeat="event in events"
+          ng-repeat="event in events | filter: myFilter"
           data-toggle="modal"
           data-target="#exampleModal"
           ng-click="modalHandler(event)"
