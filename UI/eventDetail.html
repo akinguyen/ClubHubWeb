@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="text-center" ng-app="myApp">
-    <div class="bg" style="height: 150%"></div>
+    <div class="bg" style="height: 200%"></div>
     <br />
     <div
       class="container bg-success"
@@ -53,6 +53,115 @@
     </div>
 
     <div class="clearfix"></div>
+
+    <div class="container" ng-controller="clubEventController">
+      <div class="card-columns st-3 mt-4">
+        <div
+          class="card"
+          ng-repeat="event in events"
+          data-toggle="modal"
+          data-target="#exampleModal"
+          ng-click="modalHandler(event)"
+        >
+          <a target="_blank">
+            <img
+              style="cursor: pointer"
+              src="{{ event.image }}"
+              alt="Cinque Terre"
+              class="card-img-top"
+            />
+          </a>
+          <div class="card-body m-0 text-center">
+            <div class="card-text">
+              <h5>
+                {{ event.eventName }} <span ng-show="event.freeFood">🍔</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+
+      <div class="clearfix"></div>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                {{ modalEvent.eventName }}
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="bg-success">
+                <img
+                  src="{{ modalEvent.image }}"
+                  alt="Card image cap"
+                  width="100%"
+                />
+                <div class="card-body">
+                  <div class="text-center">
+                    <h2 class="mt-1">
+                      {{ modalEvent.eventName }}
+                      <span ng-show="modalEvent.freeFood">🍔</span>
+                    </h2>
+                    <div>
+                      <h5 class="mt-1">{{ modalEvent.date }}</h5>
+                      <h5 class="mt-1">{{ modalEvent.time }}</h5>
+                      <h5 class="mt-1">{{ modalEvent.description }}</h5>
+                      <a class="clubLink" style="cursor: pointer; color: red">
+                        <input
+                          type="hidden"
+                          value="{{ modalEvent.club._id }}"
+                        />
+                        <h5 class="mt-1">
+                          Club Name: {{ modalEvent.club.clubName }}
+                        </h5>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <input type="text" placeholder="Email" ng-model="emailRegister" />
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+                ng-click="unregisterEvent(modalEvent.club._id,modalEvent._id)"
+              >
+                Unregister
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-dismiss="modal"
+                ng-click="registerEvent(modalEvent.club._id,modalEvent._id)"
+              >
+                Register
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
