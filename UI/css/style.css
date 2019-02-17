@@ -81,3 +81,21 @@ div.desc {
 .dropdown-item {
   cursor: pointer;
 }
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: red;
+}
+
+/* mouse over link */
+a:hover {
+  color: blue;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
