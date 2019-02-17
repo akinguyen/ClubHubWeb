@@ -166,20 +166,25 @@
         <a class="nav-item nav-link mr-auto" href="calendar.html"
           >My Calendar</a
         >
+        <a class="nav-item nav-link mr-auto" href="myEvents.html">My Events</a>
       </div>
     </div>
   </nav>
   <body ng-app="myApp">
     <div
       class="bg"
-      style="background: url('https://i.ytimg.com/vi/LpZke_OMtls/hqdefault.jpg'); height: 100%
+      style="background: url('https://www.xmple.com/wallpaper/linear-gradient-green-1920x1080-c2-006400-adff2f-a-45-f-14.svg'); height: 100%
       "
     ></div>
     <br />
 
     <h2 class="title mt-2" style="margin-left: 40%">My Events</h2>
 
-    <div class="container" ng-controller="myEvenController">
+    <div
+      class="container"
+      style="margin-top: 100px"
+      ng-controller="myEvenController"
+    >
       <div id="carousel">
         <figure ng-repeat="event in users[1].events">
           <img
