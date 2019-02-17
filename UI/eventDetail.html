@@ -28,6 +28,29 @@
     <script src="js/controllers.js"></script>
     <link rel="stylesheet" href="css/style.css" />
   </head>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">ClubHub</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#"
+          >Clubs<span class="sr-only">Clubs</span></a
+        >
+        <a class="nav-item nav-link" href="events.html">Events</a>
+      </div>
+    </div>
+  </nav>
+
   <body class="text-center" ng-app="myApp">
     <div class="bg" style="height: 200%"></div>
     <br />
@@ -124,15 +147,6 @@
                       <h5 class="mt-1">{{ modalEvent.date }}</h5>
                       <h5 class="mt-1">{{ modalEvent.time }}</h5>
                       <h5 class="mt-1">{{ modalEvent.description }}</h5>
-                      <a class="clubLink" style="cursor: pointer; color: red">
-                        <input
-                          type="hidden"
-                          value="{{ modalEvent.club._id }}"
-                        />
-                        <h5 class="mt-1">
-                          Club Name: {{ modalEvent.club.clubName }}
-                        </h5>
-                      </a>
                     </div>
                   </div>
                 </div>

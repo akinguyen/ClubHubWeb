@@ -38,10 +38,32 @@
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">ClubHub</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#"
+          >Clubs <span class="sr-only">Clubs</span></a
+        >
+        <a class="nav-item nav-link" href="events.html">Events</a>
+      </div>
+    </div>
+  </nav>
   <body ng-app="myApp">
     <div class="bg"></div>
     <br />
-    <h2 class="title mt-2">All of the Events</h2>
+    <h2 class="title mt-2">All of the Events this Week</h2>
 
     <div class="container" ng-controller="eventsController">
       <div class="dropdown ml-3 mb-2">
