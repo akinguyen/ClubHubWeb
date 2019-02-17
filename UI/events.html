@@ -53,7 +53,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="#"
+        <a class="nav-item nav-link active" href="clubs.html"
           >Clubs <span class="sr-only">Clubs</span></a
         >
         <a class="nav-item nav-link" href="events.html">Events</a>
@@ -94,6 +94,7 @@
           data-toggle="modal"
           data-target="#exampleModal"
           ng-click="modalHandler(event)"
+          style="background-image: linear-gradient(to bottom right, rgb(255, 94, 0), rgb(218, 230, 173));"
         >
           <a target="_blank">
             <img
@@ -163,6 +164,9 @@
                           Club Name: {{ modalEvent.club.clubName }}
                         </h5>
                       </a>
+                      <h5 class="mt-1">
+                        {{ modalEvent.users.length }} people joined
+                      </h5>
                     </div>
                   </div>
                 </div>

@@ -9,6 +9,9 @@ angular
 
         console.log(response.data);
       });
+    $scope.modalHandler = function(club) {
+      $scope.modalEvent = club;
+    };
   })
   .controller("clubInfoController", function($http, $scope) {
     var url_string = window.location.href;
